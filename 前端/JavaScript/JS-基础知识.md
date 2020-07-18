@@ -79,7 +79,7 @@ JS中类型转换只有三种情况：
 * 转换为数字
 * 转换为字符串
 
-<!-- ![](../.gitbook/assets/image.png) -->
+![](https://cdn.jsdelivr.net/gh/soragoto134/picGo_imgs/blog/js-type-change.png)
 
 对象在转换类型的时候回调用 `[[ToPrimitive]]` 函数：
 
