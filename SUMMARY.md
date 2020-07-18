@@ -3,5 +3,5 @@
 * [README](README.md)
 - 前端
   - JavaScript
-    - [JS 基础知识](前端/JS-基础知识.md)
+    - [JS 基础知识](前端/JavaScript/JS-基础知识.md)
 - 读书笔记
