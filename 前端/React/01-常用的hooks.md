@@ -116,3 +116,33 @@ const useEventListener = (eventName, handler, element = window) => {
 ### Resources
 
 - 来源 [donavon/use-event-listener](https://github.com/donavon/use-event-listener)
+
+## useDeepEffect
+
+用于想在依赖变量深比较发生变化时再执行副作用。例如父组件给子组件直接传递了一个数组，每次渲染数组的引用的都发生了变化，但是不希望执行子组件的相应副作用，可用此 `hook` 解决此问题。
+
+深比较用了 `lodash` 的 `isEqual` 方法。
+
+### code
+
+```javascript
+const useDeepEffect = (callback, deps) => {
+    const isFirst = useRef(true);
+    const prevDeps = useRef(deps);
+
+    useEffect(() => {
+        const isSame = prevDeps.current.every((obj, index) => _.isEqual(obj, deps[index]));
+
+        if (isFirst.current || !isSame) {
+            callback();
+        }
+
+        isFirst.current = false;
+        prevDeps.current = deps;
+    }, deps);
+}
+```
+
+### Resources
+
+- 相关实现库 [kentcdodds/use-deep-compare-effect](https://github.com/kentcdodds/use-deep-compare-effect)
