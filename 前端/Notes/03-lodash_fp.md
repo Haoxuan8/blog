@@ -39,8 +39,9 @@ flow(
 
 使用 `fp/flow` 代替 `chain`。
 
-- `_.chain` 会导致导入整个模块，随着 `lodash` 方法逐渐增加，打包体积会越来越大。
+- 并不需要 `lodash` 的所有方法，`_.chain` 会导致导入整个模块，随着 `lodash` 方法逐渐增加，打包体积会越来越大。
 - `_.chain` 无法加上自定义的方法。
+
 
 ## Code Efficiently!
 
